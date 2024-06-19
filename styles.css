@@ -16,13 +16,31 @@ html, body {
     height: 70vmin; /* 90% of the smaller viewport dimension */
     border: 5px solid darkgray;
     box-sizing: border-box; /* Include the border in the size calculation */
+    background-color: black;
 }
+#smallDisplay{
+    flex:1;
+    border: 1px solid black;
+    border-bottom: none;
+    opacity: 0.7;
+    background-color: rgb(175, 172, 172);
+    text-align: right;
+    font-size: xx-large;
 
+    overflow-x: auto; /* Hide overflow content */
+    white-space: nowrap; /* Prevent text from wrapping to the next line */
+    box-sizing: border-box; /* Ensure padding is included in the height */
+    
+
+}
 #display{
     flex: 2;
     border: 1px solid black;
     background-color: lightgrey;
-    opacity: 0.7;
+    text-align: right;
+    font-size: 10vmin;
+    color: black;
+    font-weight: 500;
 
 }
 
@@ -40,11 +58,20 @@ html, body {
     border: 0.5px solid black;
 }
 
+.button:active{
+
+    transform: scale(0.98); 
+    /* Scaling button to 0.98 to its original size */ 
+    box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24); 
+    /* Lowering the shadow */ 
+
+}
+
 .number{
     background-color: darkgray;
 }
 
-.operand{
+.operator{
     background-color: lightyellow;
 }
 
