@@ -18,21 +18,7 @@ html, body {
     box-sizing: border-box; /* Include the border in the size calculation */
     background-color: black;
 }
-#smallDisplay{
-    flex:1;
-    border: 1px solid black;
-    border-bottom: none;
-    opacity: 0.7;
-    background-color: rgb(175, 172, 172);
-    text-align: right;
-    font-size: xx-large;
 
-    overflow-x: auto; /* Hide overflow content */
-    white-space: nowrap; /* Prevent text from wrapping to the next line */
-    box-sizing: border-box; /* Ensure padding is included in the height */
-    
-
-}
 #display{
     flex: 2;
     border: 1px solid black;
@@ -41,6 +27,10 @@ html, body {
     font-size: 10vmin;
     color: black;
     font-weight: 500;
+
+    overflow-x: auto; /* Hide overflow content */
+    white-space: nowrap; /* Prevent text from wrapping to the next line */
+    box-sizing: border-box; /* Ensure padding is included in the height */
 
 }
 
