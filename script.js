@@ -18,23 +18,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Handle operator input
             else if (button.classList.contains('operator')) {
-                if (currentInput && previousInput && operation) {
+                if(operation === null){
+                    display.textContent = value; // Display the operator when no calculation is performed
+                }
+                if (previousInput && currentInput && operation) {
                     currentInput = calculate(previousInput, currentInput, operation); // Calculate result
                     display.textContent = currentInput; // Display result
-                    previousInput = currentInput; // Use the result as the next previous input
-                    currentInput = ''; // Prepare for next input
-                } else if (!previousInput && currentInput) { // If no previous input and there is current input
-                    previousInput = currentInput; // Set current input as previous
-                    currentInput = ''; // Clear current input
-                } 
-
-                if (value !== '=') {
-                    operation = value; // Set operation
-                } else {
-                    display.textContent = previousInput; // Show the result when '=' is pressed
-                    previousInput = ''; // Reset previous input
-                    operation = null; // Clear operation
+                    previousInput = currentInput; // Store the result as the new previousInput for next operation
+                    currentInput = ''; // Clear current input for the next number
+                    operation = null; // Reset operation
+                } else if (!previousInput && currentInput) { // If there's no previous input yet, set currentInput as previousInput
+                    previousInput = currentInput;
+                    currentInput = '';
                 }
+                
+                operation = value; // Set the new operation
             }
 
             // Special operations (Clear, Delete)
